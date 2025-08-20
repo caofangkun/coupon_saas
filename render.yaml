@@ -1,0 +1,12 @@
+# render.yaml
+services:
+  - type: web
+    name: coupon-saas-backend # 您的服务名称
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./coupon_saas.db # 对于Render，SQLite不会持久化，每次重启都会重置。未来需要切换到PostgreSQL。
+      - key: PYTHON_VERSION
+        value: 3.9.18 # 推荐指定一个稳定的Python版本
