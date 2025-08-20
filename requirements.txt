@@ -1,0 +1,6 @@
+fastapi==0.103.2
+uvicorn==0.23.2
+sqlalchemy==2.0.21
+pydantic==2.4.2
+pydantic-settings==2.0.3
+# 如果需要，可以添加其他依赖，比如日期处理库 dateutil 等
